@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "Ceju.h"
+#include "PciLaser.h"
 #include <iostream>
 #include "FileIo.h"
 #include <windows.h>
@@ -9,12 +9,38 @@
 
 
 #define JISUAN_TIME 5000
-Ceju ceju[1000];
+PciLaser ceju[1000];
 using std::cout;
 using std::endl;
 
 
-int Ceju::getInfomation()
+PciLaser::PciLaser(char buf[], int length)
+{
+	useful = false;
+	ave = 0;
+	usefulCount = 0;
+
+	if (length < 0)
+		return;
+	for (int i = 0; i < length; ++i)
+	{
+		if (buf[i] == 'x')
+		{
+			recvBuf[i] = 'x';
+			break;
+		}
+		else
+		{
+			recvBuf[i] = buf[i];
+		}
+	}
+};
+PciLaser::~PciLaser()
+{
+
+}
+
+int PciLaser::getInfomation()
 {
 	
 	int device_num = 10;
@@ -80,8 +106,9 @@ int Ceju::getInfomation()
 }
 
 // 根据速度 返回距离
-float Ceju::getInfomation(float speed, clock_t startTime)
+float PciLaser::getRealTime(float speed)
 {
+	clock_t startTime = clock();
 	float distance = -1;
 	if (openUSB() != 0)
 	{
@@ -147,7 +174,7 @@ float Ceju::getInfomation(float speed, clock_t startTime)
 	return distance;
 }
 
-void Ceju::printtttt()
+void PciLaser::printtttt()
 {
 	FileIo fi;
 	string file_name = fi.getCurrentName();
@@ -161,7 +188,7 @@ void Ceju::printtttt()
 	}
 }
 
-int Ceju::findSingleCGQ(float data[], int size)
+int PciLaser::findSingleCGQ(float data[], int size)
 {
 	int len = sizeof(data);
 	int flen = sizeof(float);
@@ -195,7 +222,7 @@ int Ceju::findSingleCGQ(float data[], int size)
 		return -1;
 
 }
-int Ceju::getInfomation2()
+int PciLaser::getDistance()
 {
 	if (openUSB() != 0)
 	{

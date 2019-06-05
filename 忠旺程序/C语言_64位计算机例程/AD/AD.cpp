@@ -8,7 +8,7 @@
 //#pragma comment(lib,"Usb_Daq_V52_Dll.lib")
 //#include   "Usb_Daq_V52_Dll.h"
 //#include "time.h"
-#include "Ceju.h"
+#include "PciLaser.h""
 #include "Machine.h"
 #include<fstream>
 //#include"FileIo.h"
@@ -19,14 +19,18 @@
 #include "verify.h"
 #include "Jingduceliang.h"
 
-
+void fun(char c[])
+{
+	cout << sizeof(c);
+	cout << sizeof(c[0]);
+}
 
 int main()
 {
 
-	Machine ma;
-		//ma.socket_server();
-	ma.socket_server_Jiguang();
+	//Machine ma;
+	//	//ma.socket_server();
+	//ma.socket_server_Jiguang();
 
 	// 第一次获取 传感器数据代码
 	/*Ceju ceju;
@@ -47,7 +51,9 @@ int main()
 	//jd.readFile("20190531132639.txt");
 	
 
-
+	char ab[50] = { 'a','b','c','d' };
+	cout << "ab\t" << sizeof(ab) << "\t" << sizeof(ab[0]) << endl;
+	fun(ab);
 	system("pause");
 	return 0;
 }

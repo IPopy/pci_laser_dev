@@ -2,10 +2,10 @@
 #include "Machine.h"
 
 
-
 #pragma comment( lib, "ws2_32.lib" )// 链接Winsock2.h的静态库文件
 #define _CRT_SECURE_NO_WARNINGS
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
+
 void Machine::socket_server_Opt()
 {
 	//初始化winsocket
@@ -48,7 +48,7 @@ void Machine::socket_server_Opt()
 	double odd_data = 0.0;
 	double even_data = 0.0;
 	int sign = 0;
-	OptSoftware os;
+	OptSoftware os(recvBuf, 50);
 	os.recvBuf[0] = 'x';
 
 	while (1)
@@ -141,7 +141,7 @@ void Machine::socket_server_Jiguang()
 	double even_data = 0.0;
 	int sign = 0;
 
-	Ceju ceju;
+	PciLaser laser;
 	char buff[50];
 	int flag = 0;
 	while (1)
@@ -168,8 +168,8 @@ void Machine::socket_server_Jiguang()
 				buff[i] = recvBuf[i];
 			}
 		}
-		clock_t t = clock();
-		float distance = ceju.getInfomation( 200, t );
+
+		float distance = laser.getRealTime( 200);
 		distance = 5100;
 		if (distance == -1)
 		{

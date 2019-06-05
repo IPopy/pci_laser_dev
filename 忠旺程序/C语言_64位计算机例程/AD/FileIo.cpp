@@ -58,7 +58,7 @@ void FileIo::write(string file_name, float f_num[], int size)
 	OutFile << endl;
 	OutFile.close();
 }
-void FileIo::write(string file_name, Ceju ce, int size)
+void FileIo::write(string file_name, PciLaser ce, int size)
 {
 	ofstream OutFile(file_name, ofstream::app);
 

@@ -12,23 +12,20 @@
 #define LOWER 1.5
 #define OUT_RANGE 4.99
 
-class Ceju
+class PciLaser
 {
 public:
-	Ceju() 
-	{
-		useful = false;
-		ave = 0;
-		usefulCount = 0;
-	};
-	~Ceju() {};
+	PciLaser(char buf[], int length);
+	PciLaser() {};
+	~PciLaser();
+
+	char recvBuf[50];
 
 	int getInfomation();
-	float getInfomation(float speed, clock_t startTime);
-	void verify();
+	float getRealTime(float speed);
 	void printtttt();
 private:
-	int getInfomation2();	// 这个用的很不准
+	int getDistance();	// 这个用的很不准，等待 wtc 的建模
 	int findSingleCGQ(float data[], int size);
 
 

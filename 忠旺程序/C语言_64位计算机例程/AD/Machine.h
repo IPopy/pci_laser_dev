@@ -1,7 +1,7 @@
 #pragma once
 #include <Winsock2.h> //windows socket的头文件
 #include "OptSoftware.h"
-#include "Ceju.h"
+#include "PciLaser.h"
 
 class Machine
 {
