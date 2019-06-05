@@ -63,7 +63,7 @@ int main()
 		//发送消息
 		char sendBuf[100];
 		//sprintf_s(sendBuf, "Hello, This is client %s", "兔子");
-		sprintf_s(sendBuf, "x");
+		sprintf_s(sendBuf, "b100x");
 		send(clientSocket, sendBuf, strlen(sendBuf) + 1, 0);
 
 		//接收消息

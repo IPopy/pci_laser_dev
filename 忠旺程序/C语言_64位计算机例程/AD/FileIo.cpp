@@ -77,6 +77,7 @@ void FileIo::write(string file_name, PciLaser ce, int size)
 	OutFile << endl << endl << endl;
 	OutFile.close();
 }
+
 void FileIo::read(string file_name)
 {
 	// *************************¶ÁtxtÎÄ¼þ*******************************

@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "ZhongWangDev.h"
 #include "OptSoftware.h"
-#include "PciLaser.h""
+#include "PciLaser.h"
 
 void ZhongWangDev::monitor()
 {

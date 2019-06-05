@@ -76,7 +76,7 @@ int main1()
 	timeBegin = time(NULL);
 	Sleep(2000);
 	timeEnd = time(NULL);
-	printf("%d\n", timeEnd - timeBegin);
+	printf("%ld\n", timeEnd - timeBegin);
 
 
 	//用clock()来计时  毫秒  

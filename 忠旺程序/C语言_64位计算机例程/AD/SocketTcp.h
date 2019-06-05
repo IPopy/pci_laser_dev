@@ -7,7 +7,7 @@ class SocketTcp
 {
 public:
 	// 初始化和绑定端口集成在构造函数中
-	SocketTcp(int port) ;
+	SocketTcp(int port=4000) ;
 	~SocketTcp() ;
 
 	// 子类通过重写 monitor 方法来实现自己的监听处理

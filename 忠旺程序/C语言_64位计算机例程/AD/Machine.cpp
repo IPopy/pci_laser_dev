@@ -3,8 +3,10 @@
 
 
 #pragma comment( lib, "ws2_32.lib" )// 链接Winsock2.h的静态库文件
+#ifndef _CRT_SECURE_NO_WARNINGS
 #define _CRT_SECURE_NO_WARNINGS
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
+#endif
 
 void Machine::socket_server_Opt()
 {

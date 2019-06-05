@@ -7,7 +7,7 @@
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 #endif
 
-SocketTcp::SocketTcp(int port=4000)
+SocketTcp::SocketTcp(int port)
 {
 	//≥ı ºªØwinsocket
 	WORD wVersionRequested;

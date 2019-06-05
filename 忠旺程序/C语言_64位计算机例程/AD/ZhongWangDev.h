@@ -6,6 +6,8 @@ class ZhongWangDev : SocketTcp
 {
 
 public:
+	ZhongWangDev():SocketTcp(){};
+	~ZhongWangDev() {};
 	void monitor();
 	// enum CHOISE choise;
 

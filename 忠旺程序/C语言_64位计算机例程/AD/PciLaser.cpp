@@ -40,7 +40,7 @@ PciLaser::~PciLaser()
 
 }
 
-int PciLaser::getInfomation()
+int PciLaser::getOriginData()
 {
 	
 	int device_num = 10;
@@ -105,7 +105,7 @@ int PciLaser::getInfomation()
 	closeUSB();
 }
 
-// 根据速度 返回距离
+// 根据速度 返回机械手行进的距离
 float PciLaser::getRealTime(float speed)
 {
 	clock_t startTime = clock();
@@ -156,6 +156,7 @@ float PciLaser::getRealTime(float speed)
 
 			if (ceju[ii].usefulCount > 30)
 			{
+				// 单次采集超过 30 个点则认为找到边缘
 				distance = (ceju[ii].begin - startTime) * speed;
 
 				AD_continu_stop(0);

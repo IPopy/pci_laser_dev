@@ -21,7 +21,7 @@ public:
 
 	char recvBuf[50];
 
-	int getInfomation();
+	int getOriginData();
 	float getRealTime(float speed);
 	void printtttt();
 private:
